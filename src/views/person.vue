@@ -1,6 +1,5 @@
 <template>
   <div class="profile-container">
-    <div class="controls"><Button label="Return" @mouseup="toHome" /></div>
     <div class="profile">
       <Card v-if="person">
         <template #header>
@@ -25,6 +24,11 @@
               {{ person.phone }}
             </div>
             <div>{{ person.cell }}</div>
+          </div>
+        </template>
+        <template #footer>
+          <div class="controls">
+            <Button icon="pi pi-arrow-left" @mouseup="toHome" />
           </div>
         </template>
       </Card>
@@ -77,11 +81,13 @@ export default defineComponent({
   justify-content: center;
   align-content: center;
   height: 100%;
+  flex-wrap: wrap;
 }
 
 .profile-container .controls {
-  display: block;
-  float: left;
+  display: flex;
+  justify-content: start;
+  width: 100%;
 }
 
 .profile-container .profile {
