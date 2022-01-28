@@ -17,5 +17,6 @@ module.exports = {
     semi: [0],
     'no-shadow': [0],
     'operator-linebreak': [0],
+    'nonblock-statement-body-position': [0],
   },
 };
