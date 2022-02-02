@@ -4,7 +4,7 @@
       <Card v-if="person">
         <template #header>
           <div>
-            <img :src="person.picture.large" alt="" />
+            <img id="profile-image" :src="person.picture.large" alt="" />
           </div>
         </template>
         <template #title>
@@ -16,7 +16,9 @@
               {{ person.location.street.number }}
               {{ person.location.street.name }}
             </div>
-            <div class="address">{{ person.location.city }}, {{ person.location.state }}</div>
+            <div class="address">
+              {{ person.location.city }}, {{ person.location.state }}
+            </div>
             <div>
               <h4>Date of Birth</h4>
               {{ birthDate?.toDateString() }}
@@ -105,9 +107,14 @@ export default defineComponent({
 }
 
 .profile h4 {
-  margin-top: 0%;
-  margin-bottom: 0.33em;
+  margin-top: 0.33em;
+  margin-bottom: 0;
   text-align: start;
   text-indent: 3em;
+}
+
+#profile-image {
+  border-radius: 50%;
+  padding:1em;
 }
 </style>
