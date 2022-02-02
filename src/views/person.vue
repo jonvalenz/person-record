@@ -16,14 +16,19 @@
               {{ person.location.street.number }}
               {{ person.location.street.name }}
             </div>
-            <div>{{ person.location.city }}, {{ person.location.state }}</div>
+            <div class="address">{{ person.location.city }}, {{ person.location.state }}</div>
             <div>
+              <h4>Date of Birth</h4>
               {{ birthDate?.toDateString() }}
             </div>
             <div>
+              <h4>Phone</h4>
               {{ person.phone }}
             </div>
-            <div>{{ person.cell }}</div>
+            <div>
+              <h4>Cellular</h4>
+              {{ person.cell }}
+            </div>
           </div>
         </template>
         <template #footer>
@@ -93,5 +98,16 @@ export default defineComponent({
 .profile-container .profile {
   min-width: 20em;
   max-width: 20em;
+}
+
+.profile .address {
+  margin-bottom: 10%;
+}
+
+.profile h4 {
+  margin-top: 0%;
+  margin-bottom: 0.33em;
+  text-align: start;
+  text-indent: 3em;
 }
 </style>
