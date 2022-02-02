@@ -28,7 +28,7 @@ export default defineComponent({
     const filterDelay = 200;
     let currentTimeout = 0;
 
-    getPeople(randomUserQuery).then((result) => {
+    getPeople(randomUserQuery.previewQuery).then((result) => {
       people.value = result.results as IPerson[];
       peopleToDisplay.value = people.value;
     });

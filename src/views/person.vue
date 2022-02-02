@@ -61,7 +61,7 @@ export default defineComponent({
 
     uuid.value = route.params.uuid as string;
 
-    getPeople(randomUserQuery).then((response) => {
+    getPeople(randomUserQuery.fullInfoQuery).then((response) => {
       person.value = response.results.find(
         (person) => person.login.uuid === uuid.value,
       );
